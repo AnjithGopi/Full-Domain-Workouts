@@ -56,8 +56,66 @@ let greetings= function greet(message){
 greetings.apply(person,["How are you"])
 
 
-greetings.call(person,"Poy oomb")
+greetings.call(person,"Are you there")
 
 person.sayHello()
 let newFunc=person.sayHello.bind(person)
 newFunc()
+
+
+
+let message="Hello"
+
+
+
+function sayHi(){
+
+
+
+    let message="Hiii"
+    
+    console.log("message:",message)
+
+    function hello(){
+
+        console.log(message, "Joel")
+
+    }
+
+    hello()
+
+}
+
+
+
+
+
+sayHi()
+
+
+
+for (let i = 1; i <= 10; i++) {
+    setTimeout(() => {
+      console.log(i);
+    }, i* 1000);
+  }
+
+
+
+  let counter=10
+
+  let interval=setInterval(()=>{
+    console.log(counter)
+    counter++
+
+    
+
+  if(counter>20){
+    clearInterval(interval)
+  }
+
+
+  },1000)
+
+  
+  
