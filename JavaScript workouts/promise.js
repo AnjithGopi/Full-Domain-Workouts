@@ -29,13 +29,15 @@ let myPromise = new Promise((resolve,reject)=>{
 let myPromise2=new Promise((resolve,reject)=>{
     setTimeout(()=>{
         let success=true
-        if(!success){
+        if(success){
             resolve("Promise 2 resolved")
         }else{
             reject("Promise 2 rejected")
         }
     },2000)
 })
+
+
 
 
 
@@ -57,14 +59,14 @@ Promise.all([myPromise,myPromise2,myPromise3])  // promise .all example
 
 
 .then((result)=>{
-    console.log(result)
+    console.log("promise all:",result)
    
 
     
 })
 
 .catch((error)=>{
-    console.log(error)
+    console.log("promise all:",error)
 })
 
 
