@@ -119,3 +119,19 @@ for (let i = 1; i <= 10; i++) {
 
   
   
+console.log("Start");
+
+
+setTimeout(() => {
+    console.log("setTimeout with 0ms delay");
+  }, 0);
+  
+setImmediate(() => {
+    console.log("setImmediate callback");
+  });
+
+
+
+  
+
+console.log("End");

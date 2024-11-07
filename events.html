@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <ul id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </ul>
+    </div>
+
+
+    <div class="c1">component 1
+        <div class="c2">
+            component 2
+
+            <div class="c3">
+                component 3
+            </div>
+        </div>
+    </div>
+
+    <h1>event delegation example</h1>
+
+    <div class="parent">
+
+        <div class="child">child 1</div>
+        <div class="child">child 2</div>
+        <div class="child">child 3</div>
+
+    </div>
+    
+</body>
+
+
+<script>
+    let div1=document.querySelector(".c1")
+    let div2=document.querySelector(".c2")
+    let div3=document.querySelector(".c3")
+
+    let parent=document.querySelector(".parent")
+
+    let uldiv=document.getElementById("list")
+
+
+    div1.addEventListener("click",(event)=>{
+        alert("event 1 clicked")
+    },true)
+
+    div2.addEventListener("click",(event)=>{
+        alert("event 2 clicked")
+    },true)
+
+    div3.addEventListener("click",(event)=>{
+
+        event.stopPropagation()
+        alert("event 3 clicked")
+    },true)
+
+    uldiv.addEventListener("click",(event)=>{
+        console.log(event.target)
+        alert(event.target.textContent)
+        
+    })
+
+
+    parent.addEventListener("click",(event)=>{
+
+        if(event.target.matches(".child")){
+
+            alert(event.target.textContent)
+        }
+    })
+</script>
+</html>
