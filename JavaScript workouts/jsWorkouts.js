@@ -142,3 +142,43 @@ function compress(str){
 compress(word)
 
 
+
+
+
+
+
+
+
+
+
+
+const result1 = firstNonRepeatingCharacter("swiss");
+console.log(result1); // Output: "w"
+
+const result2 = firstNonRepeatingCharacter("aabbcc");
+console.log(result2); // Output: "No non-repeating character"
+
+
+
+
+function firstNonRepeatingCharacter(str){
+
+
+let result="No element found"
+    for(let elem of str){
+
+        if(str.indexOf(elem)==str.lastIndexOf(elem)){
+
+            result=elem
+            break
+        }
+    }
+
+    return result
+
+}
+
+
+
+
+

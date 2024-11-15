@@ -7,74 +7,179 @@
 </head>
 <body>
 
-    <div>
-        <ul id="list">
-            <li>Item 1</li>
-            <li>Item 2</li>
-          </ul>
+   
+
+    <div  class="button_1" > 
+        <!-- example to show how to prevent the right click -->
+        <button style="color: blue;">
+            click me
+        </button>
     </div>
 
 
-    <div class="c1">component 1
-        <div class="c2">
-            component 2
 
-            <div class="c3">
-                component 3
+    <div class="gp">
+        grand parent
+
+        <div class="parnt">
+            parent
+            <div class="child">
+                child
             </div>
         </div>
     </div>
 
-    <h1>event delegation example</h1>
 
-    <div class="parent">
+    <div>
+        <h1>event bubbling example</h1>
 
-        <div class="child">child 1</div>
-        <div class="child">child 2</div>
-        <div class="child">child 3</div>
+        <div class="gprnt">
+            grand parent
+    
+            <div class="parent">
+                parent
+                <div class="child2">
+                    child
+                </div>
+            </div>
+        </div>
+
 
     </div>
-    
+
+
+    <div>
+        <h2>example for event delegation</h2>
+
+        <div class="items">
+
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+
+        </div>
+    </div>
+
+
+   
+
 </body>
 
 
 <script>
-    let div1=document.querySelector(".c1")
-    let div2=document.querySelector(".c2")
-    let div3=document.querySelector(".c3")
 
-    let parent=document.querySelector(".parent")
+    // event delegation.....
 
-    let uldiv=document.getElementById("list")
+    let list=document.querySelector(".items")
 
+    list.addEventListener("click",()=>{
 
-    div1.addEventListener("click",(event)=>{
-        alert("event 1 clicked")
-    },true)
+        if(event.target.tagName==="LI"){
 
-    div2.addEventListener("click",(event)=>{
-        alert("event 2 clicked")
-    },true)
-
-    div3.addEventListener("click",(event)=>{
-
-        event.stopPropagation()
-        alert("event 3 clicked")
-    },true)
-
-    uldiv.addEventListener("click",(event)=>{
-        console.log(event.target)
-        alert(event.target.textContent)
-        
-    })
-
-
-    parent.addEventListener("click",(event)=>{
-
-        if(event.target.matches(".child")){
-
-            alert(event.target.textContent)
+            alert(`clicked on ${event.target.textContent}`)
         }
     })
+
+
+    //..............
+
+    // event bubbling
+
+    let grandparent=document.querySelector(".gprnt")
+    let parentdiv= document.querySelector(".parent")
+    let childdiv=document.querySelector(".child2")
+
+
+
+    grandparent.addEventListener("click",()=>{
+
+        alert("event bubbled on grandparent")
+
+    })
+
+
+    parentdiv.addEventListener("click",()=>{
+
+        alert("event bubbled on parent")
+    })
+
+    childdiv.addEventListener("click",()=>{
+
+        
+
+        alert("target on child")
+    })
+
+
+
+
+
+    //.............................
+
+    let gp=document.querySelector(".gp")
+    let parent=document.querySelector(".parnt")
+    let child=document.querySelector(".child")
+
+
+    gp.addEventListener("click",()=>{
+
+        
+
+        alert("event worked on grand parent")
+    },true)
+
+    
+    parent.addEventListener("click",()=>{
+
+      
+   alert("event worked on parent")
+   },true)
+
+
+   
+   child.addEventListener("click",()=>{
+
+  alert("event worked on child")
+  },true)
+
+
+
+
+
+
+
+    let button=document.querySelector(".button_1")
+
+    document.addEventListener("contextmenu",()=>{ // preventing right click in the entire page   
+
+        event.preventDefault()
+
+        alert("right click is disabled in this page")
+    })
+   
+
+    // preventing the right click
+
+    button.addEventListener("contextmenu",()=>{
+
+        event.preventDefault()
+
+        alert("Right click disabled")
+    })
+
+    button.addEventListener("click",()=>{
+
+        alert("left button clicked")
+    })
+
+
+
+
+
+
+   
+
 </script>
 </html>
