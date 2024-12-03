@@ -94,15 +94,8 @@ sayHi()
 
 
 
-for (let i = 1; i <= 10; i++) {
-    setTimeout(() => {
-      console.log(i);
-    }, i* 1000);
-  }
 
-
-
-  let counter=10
+  let counter=0
 
   let interval=setInterval(()=>{
     console.log(counter)
@@ -110,11 +103,11 @@ for (let i = 1; i <= 10; i++) {
 
     
 
-  if(counter>20){
+  if(counter>10){
     clearInterval(interval)
   }
 
 
   },1000)
 
-  
+ 

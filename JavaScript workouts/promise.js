@@ -53,6 +53,25 @@ let myPromise3=new Promise((resolve,reject)=>{
 })
 
 
+let myPromise4= new Promise((resolve,reject)=>{
+
+    setTimeout(()=>{
+
+        let success=true
+
+        if(success){
+
+            resolve("Promise 4 resolved")
+        }else{
+
+            reject("Promise 4 rejected")
+        }
+
+
+    },1000)
+})
+
+
 
 
 Promise.all([myPromise,myPromise2,myPromise3])  // promise .all example
@@ -84,6 +103,19 @@ Promise.race([myPromise,myPromise2,myPromise3])
     console.log("race rejected with:",error)
 })
 
+
+Promise.allSettled([myPromise,myPromise2,myPromise3])
+
+.then((result)=>{
+
+    console.log("promise resolved with :",result)
+})
+
+
+.catch((error)=>{
+
+    console.log("promise rejected:",result)
+})
 
 
 
