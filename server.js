@@ -1,51 +1,24 @@
-
+import cors from "cors"
 import express from"express"
 const app=express()
-const router=express.Router()
-app.use(router)
 
-app.use((req,res,next)=>{
 
-    let a=true
-   if(!a){
-   
-    res.status(401).json({message:"unAuthorized user"})
-   }else{
 
-    next()
+app.use(cors())
 
-   }
 
-   
+
+
+app.get("/data",(req,res)=>{
+
+    res.status(200).json({name:"Anjith",
+        age:25,
+        occupation:"Software Engineer",
+        hobbies:["Cricket","Football","Reading","lhjdg"],
+    })
+
 })
 
-
-router.use((req,res,next)=>{
-
-    let success=true
-
-    if(!success){
-
-        res.status(200).json({message:"Successull"})
-    }
-
-    else{
-
-        next()
-    }
-})
-
-
-
-
-
-
-app.get("/home",(req,res,next)=>{
-
-    console.log("req type",req.method)
-
-   res.status(200).json({message:"Hello world"})
-})
 
 
 

@@ -4,21 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
    
 
-    <div  class="button_1" > 
+
+    <button onclick="dataFetch()">fetch data</button>
+
+    <script>
+
+        function dataFetch(){
+
+            axios.get("http://localhost:5000/data")
+
+            .then((result)=>{
+                console.log(result)
+                console.log(result.data)
+            })
+
+            .catch(error=>console.log(error))
+        }
+    </script>
+
+
+
+    <button onclick="getData()">get data</button>
+
+    <script>
+        function getData(){
+
+            console.log("button clicked")
+
+            fetch("http://localhost:5000/data")
+            .then((response)=>
+                response.json()
+            )
+            .then((data)=>{
+
+                console.log("data recieved:",data)
+            })
+           .catch((err)=>{
+            console.log(err)
+           })
+
+        }
+    </script>
+
+   
+
+    <!-- <div  class="button_1" >  -->
         <!-- example to show how to prevent the right click -->
-        <button style="color: blue;">
+        <!-- <button style="color: blue;">
             click me
         </button>
-    </div>
+    </div> -->
 
 
 
-    <div class="gp">
+    <!-- <div class="gp">
         grand parent
 
         <div class="parnt">
@@ -27,10 +72,10 @@
                 child
             </div>
         </div>
-    </div>
+    </div> -->
 
 
-    <div>
+    <!-- <div>
         <h1>event bubbling example</h1>
 
         <div class="gprnt">
@@ -45,10 +90,10 @@
         </div>
 
 
-    </div>
+    </div> -->
 
 
-    <div>
+    <!-- <div>
         <h2>example for event delegation</h2>
 
         <div class="items">
@@ -60,7 +105,7 @@
             </ul>
 
         </div>
-    </div>
+    </div> -->
 
 
    
@@ -72,45 +117,45 @@
 
     // event delegation.....
 
-    let list=document.querySelector(".items")
+    // let list=document.querySelector(".items")
 
-    list.addEventListener("click",()=>{
+    // list.addEventListener("click",()=>{
 
-        if(event.target.tagName==="LI"){
+    //     if(event.target.tagName==="LI"){
 
-            alert(`clicked on ${event.target.textContent}`)
-        }
-    })
+    //         alert(`clicked on ${event.target.textContent}`)
+    //     }
+    // })
 
 
     //..............
 
     // event bubbling
 
-    let grandparent=document.querySelector(".gprnt")
-    let parentdiv= document.querySelector(".parent")
-    let childdiv=document.querySelector(".child2")
+    // let grandparent=document.querySelector(".gprnt")
+    // let parentdiv= document.querySelector(".parent")
+    // let childdiv=document.querySelector(".child2")
 
 
 
-    grandparent.addEventListener("click",()=>{
+    // grandparent.addEventListener("click",()=>{
 
-        alert("event bubbled on grandparent")
+    //     alert("event bubbled on grandparent")
 
-    })
+    // })
 
 
-    parentdiv.addEventListener("click",()=>{
+    // parentdiv.addEventListener("click",()=>{
 
-        alert("event bubbled on parent")
-    })
+    //     alert("event bubbled on parent")
+    // })
 
-    childdiv.addEventListener("click",()=>{
+    // childdiv.addEventListener("click",()=>{
 
         
 
-        alert("target on child")
-    })
+    //     alert("target on child")
+    // })
 
 
 
@@ -118,61 +163,61 @@
 
     //.............................
 
-    let gp=document.querySelector(".gp")
-    let parent=document.querySelector(".parnt")
-    let child=document.querySelector(".child")
+//     let gp=document.querySelector(".gp")
+//     let parent=document.querySelector(".parnt")
+//     let child=document.querySelector(".child")
 
 
-    gp.addEventListener("click",()=>{
+//     gp.addEventListener("click",()=>{
 
         
 
-        alert("event worked on grand parent")
-    },true)
+//         alert("event worked on grand parent")
+//     },true)
 
     
-    parent.addEventListener("click",()=>{
+//     parent.addEventListener("click",()=>{
 
       
-   alert("event worked on parent")
-   },true)
+//    alert("event worked on parent")
+//    },true)
 
 
    
-   child.addEventListener("click",()=>{
+//    child.addEventListener("click",()=>{
 
-  alert("event worked on child")
-  },true)
-
-
+//   alert("event worked on child")
+//   },true)
 
 
 
 
 
-    let button=document.querySelector(".button_1")
 
-    document.addEventListener("contextmenu",()=>{ // preventing right click in the entire page   
 
-        event.preventDefault()
+    // let button=document.querySelector(".button_1")
 
-        alert("right click is disabled in this page")
-    })
+    // document.addEventListener("contextmenu",()=>{ // preventing right click in the entire page   
+
+    //     event.preventDefault()
+
+    //     alert("right click is disabled in this page")
+    // })
    
 
-    // preventing the right click
+    // // preventing the right click
 
-    button.addEventListener("contextmenu",()=>{
+    // button.addEventListener("contextmenu",()=>{
 
-        event.preventDefault()
+    //     event.preventDefault()
 
-        alert("Right click disabled")
-    })
+    //     alert("Right click disabled")
+    // })
 
-    button.addEventListener("click",()=>{
+    // button.addEventListener("click",()=>{
 
-        alert("left button clicked")
-    })
+    //     alert("left button clicked")
+    // })
 
 
 
