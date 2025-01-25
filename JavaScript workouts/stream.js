@@ -10,6 +10,8 @@ writeStream.end()
 
 const readStream=fs.createReadStream("streaming.txt")
 
+
+
 readStream.on('data',(chunk)=>{
     console.log(chunk.toString())
 })

@@ -91,7 +91,7 @@ Promise.all([myPromise,myPromise2,myPromise3])  // promise .all example
 
 
 
-// promise .race---------
+
 
 
 Promise.race([myPromise,myPromise2,myPromise3])
