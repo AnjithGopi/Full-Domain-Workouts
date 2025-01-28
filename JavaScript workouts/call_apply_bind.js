@@ -22,6 +22,8 @@ function sayHi(question){
 
 
 
+
+
 sayHi.call(user,"how are you?")
 sayHi.apply(user,["how old are you?"])
 const bindSample=sayHi.bind(user,"where are you?")
@@ -44,3 +46,14 @@ sayHi.call(person,"are you ok?")
 
 
 
+function Employee(name,age){
+
+    this.name=name
+    this.age=age
+
+}
+
+
+const employee= new Employee("Anjith",26)
+
+console.log(employee)

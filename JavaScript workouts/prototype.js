@@ -73,3 +73,32 @@ let animal = {
   console.log(Object.getPrototypeOf(mammal) === animal);  // true
   
 
+//F.prototype//
+
+
+
+const student={
+
+    name:"Anjith",
+    gender:"Male",
+    age:25
+}
+
+
+
+function DefineProperty(name){
+
+
+    this.name=name
+    console.log(name)
+
+
+
+}
+
+
+
+
+let obj=new DefineProperty("Vishnu")
+Object.setPrototypeOf(obj,student)
+console.log(obj.gender)
