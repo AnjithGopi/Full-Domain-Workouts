@@ -7,122 +7,82 @@
 
 
 
-let myPromise = new Promise((resolve,reject)=>{
+
+
+let promise=new Promise((resolve,reject)=>{
+
 
     setTimeout(()=>{
-
 
         let success=true
 
         if(success){
-            resolve("Promise 1 resolved")
-        }else{
 
-            reject("promise 1 rejected")
+            resolve("Done")
+
         }
+        else{
+
+            reject("failed")
+        }
+
+        
 
     },2000)
+
 })
 
 
 
-let myPromise2=new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-        let success=true
-        if(success){
-            resolve("Promise 2 resolved")
-        }else{
-            reject("Promise 2 rejected")
-        }
-    },2000)
-})
-
-
-
-
-
-let myPromise3=new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-        let success=true
-        if(success){
-            resolve("Promise 3 resolved")
-        }else{
-            reject("Promise 3 rejected")
-        }
-    },2000)
-})
-
-
-let myPromise4= new Promise((resolve,reject)=>{
-
-    setTimeout(()=>{
-
-        let success=true
-
-        if(success){
-
-            resolve("Promise 4 resolved")
-        }else{
-
-            reject("Promise 4 rejected")
-        }
-
-
-    },1000)
-})
-
-
-
-
-Promise.all([myPromise,myPromise2,myPromise3])  // promise .all example
-
-
+promise
 .then((result)=>{
-    console.log("promise all:",result)
-   
+    console.log(result)
+    return result
+
+})
+.then((result)=>{
+    return result+ " "+"added"
+})
+.then((result)=>{
+    console.log(result+"3")
+})
+.catch((error)=>{
+  console.log("rejected with ",error)
+})
+
+
+
+console.log(eval("1+1"))
+
+
+
+Promise.all([
+    new Promise(resolve => setTimeout(() => resolve(1), 3000)), // 1
+    new Promise(resolve => setTimeout(() => resolve(2), 2000)), // 2
+    new Promise((_,reject)=> setTimeout(() => reject("rejected"), 1000))  // 3
+  ]).then((result)=>{
+    console.log(result)
+  })
+  .catch((error)=>{
+    console.log(error)
+  });
+
+
+
+  let urls = [
+    'https://api.github.com/users/iliakan',
+    'https://api.github.com/users/remy',
+    'https://api.github.com/users/jeresig'
+  ];
+  
+  // map every url to the promise of the fetch
+  let requests = urls.map(url => fetch(url));
+  
+  // Promise.all waits until all jobs are resolved
+  Promise.all(requests)
+    .then(responses => responses.forEach(
+      response => console.log(`${response.url}: ${response.status}`)
+    ));
+
 
     
-})
-
-.catch((error)=>{
-    console.log("promise all:",error)
-})
-
-
-
-
-
-
-
-Promise.race([myPromise,myPromise2,myPromise3])
-
-.then((result)=>{
-    console.log("race resolved with:",result)
-})
-.catch((error)=>{
-    console.log("race rejected with:",error)
-})
-
-
-Promise.allSettled([myPromise,myPromise2,myPromise3])
-
-.then((result)=>{
-
-    console.log("promise resolved with :",result)
-})
-
-
-.catch((error)=>{
-
-    console.log("promise rejected:",result)
-})
-
-
-
-
-
-
-
-
-
-

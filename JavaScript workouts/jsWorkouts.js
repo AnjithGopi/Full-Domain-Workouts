@@ -182,3 +182,26 @@ let result="No element found"
 
 
 
+// remove vowels from the given string
+
+
+
+let remove= "lets learn javascript"
+
+
+let vowels="aeiou"
+let result=""
+
+for(let elem of remove){
+
+    if(!vowels.includes(elem)){
+
+        result+=elem
+
+    }
+}
+
+  let capitalised=result.split(" ").map((item)=>item[0].toUpperCase()+item.slice(1)).join(" ")  // capitilise the first letter of the string
+
+
+console.log(capitalised)
