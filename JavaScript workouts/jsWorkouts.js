@@ -205,3 +205,48 @@ for(let elem of remove){
 
 
 console.log(capitalised)
+
+
+// find number of zeros in 2d array
+
+
+let values=  [[0, 1, 0, 1],[1, 0, 1, 0],[0, 1, 0, 1],[1, 0, 1, 0]]
+
+let count=0
+
+
+    for(let elem of values){
+
+        for(let i=0;i<elem.length;i++){
+
+            if(elem[i]==0){
+                count++
+            }
+        }
+    }
+
+
+    console.log(count)
+
+
+
+    // find out the expensive fruit
+
+
+let fruits = {
+    apple : "$100",
+    orange : "$100",
+    grape : "$30",
+    rambu:"$30",
+    papaya : "$100",
+    berry : '$40'
+}
+
+
+let max=  Math.max (...Object.values(fruits).map((item)=>Number(item.slice(1))))
+
+let expensive= Object.keys(fruits).filter((item)=>Number(fruits[item].slice(1))===max)
+
+console.log(expensive)
+
+

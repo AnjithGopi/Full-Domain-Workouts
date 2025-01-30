@@ -85,6 +85,14 @@ Promise.all([
     ));
 
 
+
+
+
+
+
+
+
+
     let names = ['iliakan', 'remy', 'jeresig'];
 
 let request = names.map(name => fetch(`https://api.github.com/users/${name}`));
