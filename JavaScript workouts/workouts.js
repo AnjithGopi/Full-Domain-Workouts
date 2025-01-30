@@ -38,3 +38,25 @@ console.log(largest)
 
 
 
+let inputMatrix = [  [1, 2, 3, 4],[5, 6, 7, 8],[9, 10, 11, 12]];
+
+
+
+
+for(let elem of inputMatrix){
+
+    for(let i=0;i<elem.length;i++){
+
+        if(elem[i]%2==0){
+
+            [elem[i],elem[i-1]]=[elem[i-1],elem[i]]
+        }
+    }
+}
+
+
+console.log(inputMatrix)
+
+
+
+
