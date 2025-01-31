@@ -250,3 +250,8 @@ let expensive= Object.keys(fruits).filter((item)=>Number(fruits[item].slice(1))=
 console.log(expensive)
 
 
+
+
+let words="lets learn javascript together javascript learn"
+
+
