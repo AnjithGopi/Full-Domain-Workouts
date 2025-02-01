@@ -165,3 +165,5 @@ list1.print()
 
 list1.removeDuplicates()
 list1.print()
+list1.deleteMiddle()
+list1.print()
