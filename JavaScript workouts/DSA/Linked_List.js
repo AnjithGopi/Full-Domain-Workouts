@@ -131,6 +131,32 @@ class LinkedList{
 
     removeDuplicates(){
 
+
+        let temp=this.head
+
+        let prev=null
+
+        let set= new Set()
+
+        while(temp){
+
+            if(set.has(temp.value)){
+
+                prev.next=temp.next
+
+
+            }else{
+
+                set.add(temp.value)
+
+                prev=temp
+            }
+
+            temp=temp.next
+
+            
+        }
+
         
         
        
@@ -163,7 +189,7 @@ list1.sum()
 //list1.deleteMiddle()
 list1.print()
 
-list1.removeDuplicates()
+
 list1.print()
-list1.deleteMiddle()
+list1.removeDuplicates()
 list1.print()

@@ -131,6 +131,7 @@ function compress(str){
         }else{
             result+=str[i]+count
             count=1
+            
         }
     }
 
