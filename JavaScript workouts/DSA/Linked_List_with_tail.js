@@ -1,5 +1,6 @@
 
 
+
 class Node{
 
     constructor(value){
@@ -32,8 +33,10 @@ class LinkedList{
 
         if(!this.head){
 
-            this.head=node 
+            this.head=node
             this.tail=node
+           
+            
         }else{
 
            this.tail.next=node
