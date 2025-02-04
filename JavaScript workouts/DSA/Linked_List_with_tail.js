@@ -9,7 +9,6 @@ class Node{
     }
 }
 
-
 class LinkedList{
 
 
@@ -29,7 +28,7 @@ class LinkedList{
     append(value){
 
 
-        let node= new Node(value)
+        let node= new Node(value) 
 
         if(!this.head){
 

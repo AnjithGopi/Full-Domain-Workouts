@@ -1,7 +1,6 @@
 
 let arr=[1,3,2,5,4,8,7,9,11,10,6]
 
-
 function insertionSort(arr){
 
 
@@ -16,11 +15,11 @@ function insertionSort(arr){
             prev--
         }
 
-        arr[prev+1]=key
+        arr[prev+1]=key 
     }
 
     return arr
-
+ 
 }
 
 
