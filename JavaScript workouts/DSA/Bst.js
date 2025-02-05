@@ -72,7 +72,7 @@ class BinarySearchTree{
                     stack.push(currentNode)
                     currentNode=currentNode.left
                 }
-                console.log(stack)
+             
                 
                 currentNode=stack.pop()
                 
