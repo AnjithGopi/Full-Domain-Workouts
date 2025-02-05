@@ -93,7 +93,7 @@ class BinarySearchTree{
 let bst = new BinarySearchTree()
 
 bst.insert(10)
-bst.insert(10)
+bst.insert(10)// duplicate value not allowed  
 bst.insert(15)
 bst.insert(13)
 bst.insert(14)
