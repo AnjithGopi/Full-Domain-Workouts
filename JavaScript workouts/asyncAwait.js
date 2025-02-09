@@ -34,7 +34,6 @@ async function promiseSample(){
      })
 
 
-       //let result= await Promise.any([promise_1,promise_2])
 
        let resolved= await Promise.resolve("given value")
         
