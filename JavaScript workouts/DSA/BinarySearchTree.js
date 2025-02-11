@@ -75,3 +75,5 @@ bst.insert(25)
 bst.insert(18)
 bst.insert(30)
 bst.insert(45)
+
+bst.insert(100)

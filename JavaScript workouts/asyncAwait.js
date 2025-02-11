@@ -54,3 +54,40 @@ async function promiseSample(){
 
 
 promiseSample()
+
+
+
+
+async function printHello(){
+
+
+   try {
+
+    let promise = new Promise((resolve,reject)=>{
+
+          setTimeout(()=>{
+
+            resolve("hello world")
+          },2000)
+    })
+
+
+    let result=await promise
+
+    console.log(result)
+    
+   } catch (error) {
+
+    console.log(error)
+    
+   }
+
+
+   
+
+}
+
+
+printHello()
+
+
