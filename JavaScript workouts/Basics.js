@@ -28,7 +28,7 @@ proxy.age=27
 
 
 // call apply and bind
-
+// methods used to change the context of a function
 
 
 // in js call apply and bind are methods used to change the context ( this.value) of a function .
