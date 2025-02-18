@@ -1,6 +1,6 @@
 
 
-const { isUtf8 } = require("buffer")
+
 //const fs= require("fs")
 import fs from "fs"
 
@@ -24,7 +24,7 @@ fs.writeFile(filePath,content,(err)=>{
 
 
 
-fs.readFile(filePath,"Utf8",(err)=>{
+fs.readFile(filePath,"Utf8",(err,data)=>{
 
 
     if(err){
@@ -34,19 +34,20 @@ fs.readFile(filePath,"Utf8",(err)=>{
     }else{
 
         console.log("file read successfully")
+        console.log(data)
     }
 })
 
 
 
-fs.unlink(filePath,(err)=>{
+// fs.unlink(filePath,(err)=>{
 
-    if(err){
+//     if(err){
 
-        console.log("cannot delete")
+//         console.log("cannot delete")
 
-    }else{
+//     }else{
 
-        console.log("deleted successfully")
-    }
-})
+//         console.log("deleted successfully")
+//     }
+// })
