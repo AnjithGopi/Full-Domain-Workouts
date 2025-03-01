@@ -19,6 +19,7 @@ fs.writeFile(filePath,content,(err)=>{
     }else{
 
         console.log("file successfully added")
+        console.log(content)
     }
 })
 
