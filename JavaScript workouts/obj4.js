@@ -179,3 +179,36 @@ function findCustomer(orders){
 
 
 console.log(findCustomer(orders))
+
+
+
+
+
+
+
+const user = {
+    name: "Anjith",
+    address: {
+      city: "Kochi",
+      country: "India",
+      location: {
+        lat: 9.9312,
+        lon: 76.2673
+      }
+    },
+    contacts: {
+      email: "anjith@example.com",
+      phone: {
+        mobile: "+91 9876543210",
+        work: null
+      }
+    },
+    preferences: null
+  };
+  
+  
+  
+  
+  console.log(user.address?.location?.lat)
+  
+  console.log(user.address.location.place)

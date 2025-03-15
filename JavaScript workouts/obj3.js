@@ -73,53 +73,77 @@ const orders = [
 
 
 
-function customer(orders){
 
 
-    let customers={}
+function findCustomer(orders){
+  
 
+    let count={}
 
     for(let elem of orders){
 
 
-        let quantity=0
+        let qtyPerCustomer=elem.items.reduce((acc,curr)=>acc+curr.quantity,0)
+        
+        if(!count[elem.name]){
 
-        for(let item of elem.items){
-
-            quantity+=item.quantity
-        }
-
-
-        if(customers[elem.name]){
-
-            customers[elem.name]+=quantity
+            count[elem.name]=qtyPerCustomer
         }else{
-
-            customers[elem.name]=quantity
+            count[elem.name]+=qtyPerCustomer
         }
-
-
-
-
+        
+        
     }
 
-    //return customers
-
+    console.log(count)
 
     let max=0
     let name
 
-    for(let elem in customers){
+    for(let elem in count){
 
-        if(customers[elem]>max){
+        if(count[elem]>max){
 
-            max=customers[elem]
+            max=count[elem]
             name=elem
         }
     }
 
     return name
 
+   
+
+}
+
+
+console.log(findCustomer(orders))
+
+
+
+
+
+// Write a function that counts how many orders each customer has placed.
+
+
+
+function numberOfOrders(orders){
+
+    let count={}
+
+    for(let elem of orders){
+
+        
+
+        if(!count[elem.name]){
+
+            count[elem.name]=1
+        }else{
+
+            count[elem.name]++
+        }
+    }
+
+    return count
 
 
 
@@ -128,4 +152,4 @@ function customer(orders){
 
 
 
-console.log(customer(orders))
+console.log(numberOfOrders(orders))
