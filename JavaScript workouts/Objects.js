@@ -62,7 +62,14 @@ console.log(user1)
 console.log(user2)
 
 
+// destructuring
 
+const name="Abin"
+const age=26
+
+const obj={name,age}
+
+console.log(obj)
 
 
 
