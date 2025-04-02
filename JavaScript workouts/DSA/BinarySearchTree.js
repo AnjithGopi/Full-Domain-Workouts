@@ -3,7 +3,6 @@
 class Node{
 
     constructor(value){
-
         this.value=value
         this.left=null
         this.right=null
@@ -16,6 +15,7 @@ class Bst{
     constructor(){
 
         this.root=null
+        
     }
 
 
@@ -24,56 +24,54 @@ class Bst{
         let node= new Node(value)
 
         if(!this.root){
-
             this.root=node
-
         }else{
 
-            let currentNode=this.root
-            let parentNode=null
+            let prev=null
+            let temp=this.root 
 
-            while(currentNode){
-                parentNode=currentNode
+            while(temp){
 
-                if(value<currentNode.value){
-                    currentNode=currentNode.left
-                }else if(value>currentNode.value){
-                    currentNode=currentNode.right
-                }else{
-                    // If value is equal, don't insert duplicate
-                    console.log("Duplicate value not allowed:", value)
-                    return
+                prev=temp
+
+                if(value<temp.value){
+
+                    temp=temp.left
+
+                }else if(value>temp.value){
+
+                    temp=temp.right
                 }
             }
 
-            console.log("currentNode:",currentNode)
-            console.log("ParentNode:",parentNode)
+            if(value<prev.value){
 
-            if(value<parentNode.value){
-                parentNode.left=node
+                prev.left=node 
             }else{
-                parentNode.right=node
+                prev.right=node
             }
         }
 
-        console.log("Value added:",value)
+        console.log("value added")
     }
+
+
 
 
 }
 
 
+
 let bst= new Bst()
 
-bst.insert(10)
-bst.insert(12)
-bst.insert(15)
-bst.insert(13)
-bst.insert(14)
-bst.insert(20)
-bst.insert(25)
-bst.insert(18)
-bst.insert(30)
-bst.insert(45)
 
-bst.insert(100)
+bst.insert(10)
+bst.insert(2)
+bst.insert(7)
+bst.insert(5)
+bst.insert(12)
+bst.insert(11)
+bst.insert(17)
+bst.insert(9)
+
+

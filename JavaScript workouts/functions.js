@@ -1,6 +1,6 @@
 
 
-const ba = [23,5,7,3,5,2,87]
+const ba = [23,5,7,3,5,2,87,10]
 // 87
 // 2 87
 // 5 2 87
@@ -29,19 +29,17 @@ const products = [
     {d:[23,4,23,32]}
     ]
     
-    let sum=[]
+    let sum=0
     
 for(let elem of products){
     
     for(let element in elem){
         
-        sum.push(elem[element].reduce((acc,curr)=>acc+curr,0))
+        sum+=elem[element].reduce((acc,curr)=>acc+curr,0)
     }
     
     
 }
 
+console.log(sum)
 
-let result=sum.reduce((acc,curr)=>acc+curr,0)
-
-console.log(result)
